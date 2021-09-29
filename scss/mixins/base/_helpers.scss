@@ -1,0 +1,53 @@
+@mixin prefix($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin hocus() {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin focive() {
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin media($value) {
+    @media (max-width: #{$value}px) {
+        @content;
+    }
+}
+
+@mixin selection() {    
+    ::-moz-selection {
+        @content;
+    }
+    ::selection {
+        @content;
+    }
+}
+
+@mixin placeholder() {
+    &::-webkit-input-placeholder {
+        @content
+    };
+    &::-moz-placeholder {
+        @content
+    };
+    &:-ms-input-placeholder {
+        @content
+    };
+    &:-moz-placeholder {
+        @content
+    };
+    &::placeholder {
+        @content
+    };
+}

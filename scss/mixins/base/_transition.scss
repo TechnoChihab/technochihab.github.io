@@ -1,0 +1,3 @@
+@mixin transition($value...) {
+    @include prefix(transition, $value, webkit moz o);
+}

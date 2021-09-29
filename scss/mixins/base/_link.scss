@@ -1,0 +1,17 @@
+@mixin link($isUnderlined) {
+    @include transition(color 300ms);
+    @if $isUnderlined {
+        color: var(--color);
+        &:hover {
+            color: var(--color-darker);
+            text-decoration: underline;
+        }
+    }
+    @else {
+        color: #FFF;
+        text-decoration: none;
+        &:hover {
+            color: var(--color);
+        }
+    }
+}
